@@ -13,8 +13,11 @@ class Gear
   end
 
   def gear_inches
-      # tire goes around rim twice for diameter
-    ratio * (rim + (tire * 2))
+    ratio * diameter
+  end
+
+  def diameter
+    rim + (tire * 2)
   end
 end
 */
@@ -61,6 +64,10 @@ export default class Gear {
   }
 
   public getGearInches() {
-    return this.getRatio() * (this.rim + this.tire * 2);
+    return this.getRatio() * this.getDiameter();
+  }
+
+  public getDiameter() {
+    return this.rim + this.tire * 2;
   }
 }
