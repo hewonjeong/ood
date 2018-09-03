@@ -1,0 +1,24 @@
+{
+  "name": "ood",
+  "version": "1.0.0",
+  "description": "Practical object-oriented design in Typescript",
+  "main": "dist/index.js",
+  "dependencies": {
+    "tslint-config-airbnb": "^5.10.0",
+    "typescript": "^3.0.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.1",
+    "jest": "^23.5.0",
+    "ts-jest": "^23.1.4",
+    "tslint": "^5.11.0"
+  },
+  "scripts": {
+    "compile": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "start": "node dist/index.js"
+  },
+  "author": "Hewon Jeong",
+  "license": "ISC"
+}
