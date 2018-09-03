@@ -19,16 +19,41 @@ class Gear
 end
 */
 export default class Gear {
-  chainring: number;
-  cog: number;
-  rim: number;
-  tire: number;
+  private _chainring: number;
+  private _cog: number;
+  private _rim: number;
+  private _tire: number;
 
   constructor(chainring: number, cog: number, rim: number, tire: number) {
-    this.chainring = chainring;
-    this.cog = cog;
-    this.rim = rim;
-    this.tire = tire;
+    this._chainring = chainring;
+    this._cog = cog;
+    this._rim = rim;
+    this._tire = tire;
+  }
+
+  get chainring(): number {
+    return this._chainring;
+  }
+  get cog(): number {
+    return this._cog;
+  }
+  get rim(): number {
+    return this._rim;
+  }
+  get tire(): number {
+    return this._tire;
+  }
+  set chainring(chainring: number) {
+    this._chainring = chainring;
+  }
+  set cog(cog: number) {
+    this._cog = cog;
+  }
+  set rim(rim: number) {
+    this._rim = rim;
+  }
+  set tire(tire: number) {
+    this._tire = tire;
   }
 
   public getRatio() {
