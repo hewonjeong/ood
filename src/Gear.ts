@@ -1,3 +1,5 @@
+import Wheel from './Wheel';
+
 /*
 class Gear
   attr_reader :chainring, :cog, :rim, :tire
@@ -24,14 +26,12 @@ end
 export default class Gear {
   private _chainring: number;
   private _cog: number;
-  private _rim: number;
-  private _tire: number;
+  private _wheel: Wheel;
 
-  constructor(chainring: number, cog: number, rim: number, tire: number) {
+  constructor(chainring: number, cog: number, wheel: Wheel) {
     this._chainring = chainring;
     this._cog = cog;
-    this._rim = rim;
-    this._tire = tire;
+    this._wheel = wheel;
   }
 
   get chainring(): number {
@@ -40,23 +40,18 @@ export default class Gear {
   get cog(): number {
     return this._cog;
   }
-  get rim(): number {
-    return this._rim;
+  get wheel(): Wheel {
+    return this._wheel;
   }
-  get tire(): number {
-    return this._tire;
-  }
+
   set chainring(chainring: number) {
     this._chainring = chainring;
   }
   set cog(cog: number) {
     this._cog = cog;
   }
-  set rim(rim: number) {
-    this._rim = rim;
-  }
-  set tire(tire: number) {
-    this._tire = tire;
+  set wheel(wheel: Wheel) {
+    this._wheel = wheel;
   }
 
   public getRatio() {
@@ -64,10 +59,6 @@ export default class Gear {
   }
 
   public getGearInches() {
-    return this.getRatio() * this.getDiameter();
-  }
-
-  public getDiameter() {
-    return this.rim + this.tire * 2;
+    return this.getRatio() * this.wheel.getDiameter();
   }
 }
